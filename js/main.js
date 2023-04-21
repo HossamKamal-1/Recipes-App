@@ -5,11 +5,11 @@ let recipeDetailsEl = document.querySelector(".recipe-content");
 let searchInput = document.getElementById("searchInput");
 let searchBtn = document.getElementById("searchBtn");
 let mealBaseUrl = "https://www.themealdb.com/api/json/v1/1";
+let closeBtn = document.querySelector(".btn-close");
 
 // Event Listeners
-
 // Close Btn
-document.querySelector(".btn-close").addEventListener("click", (e) => {
+closeBtn.addEventListener("click", (e) => {
   e.currentTarget.parentElement.classList.remove("show");
 });
 // Search Input
@@ -23,11 +23,15 @@ searchBtn.addEventListener("click", () => {
     searchMealsByName(searchValue);
   }
 });
-// Recipe Btn
 document.addEventListener("click", (e) => {
+  // Recipe Btn
   if (e.target.classList.contains("recipe-btn")) {
     let mealId = e.target.dataset.mealid;
     getMealDescById(mealId);
+  }
+  // Close Btn When clicking Outside
+  if (!document.querySelector(".recipe-details-modal").contains(e.target)) {
+    closeBtn.click();
   }
 });
 
