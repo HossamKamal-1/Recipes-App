@@ -1,0 +1,109 @@
+:root {
+  --main-color: #d63384;
+  --main-transition-period: 0.3s;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  background-image: url(../images/food.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+
+/* Start Body Overlay */
+.body-overlay {
+  background-color: rgba(0, 0, 0, 0.765);
+}
+/* End Body Overlay */
+
+/* Start Recipe Details Modal */
+.recipe-details-modal {
+  left: 50%;
+  height: 92%;
+  width: 60%;
+  transform: translate(-50%, -100%);
+  transition: var(--main-transition-period) transform ease;
+}
+@media (max-width: 420px) {
+  .recipe-details-modal {
+    width: 90%;
+  }
+}
+.recipe-details-modal.show {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.recipe-details-modal .btn-close {
+  right: 8px;
+  top: 8px;
+}
+.recipe-content::-webkit-scrollbar-thumb {
+  background: #2e2c2c;
+  border-radius: 4px;
+}
+.recipe-content::-webkit-scrollbar-thumb:hover {
+  background: #2e2c2cd1;
+}
+/* End Recipe Details Modal */
+
+/* Start Searchbar  */
+.search-container input[role="searchbox"] {
+  padding-right: 24px;
+}
+#searchBtn {
+  transform: translateY(-50%);
+  right: 0;
+  padding: 4px;
+  cursor: pointer;
+  transition: var(--main-transition-period) color;
+}
+#searchBtn:hover {
+  color: var(--main-color);
+}
+
+/* End Searchbar  */
+
+/* Start Search Result Section */
+.search-result {
+  height: 80vh;
+}
+.search-result .container > div {
+  padding-right: 12px;
+  padding-left: 15px;
+  padding-top: 45px;
+}
+.cards-holder .noresult {
+}
+.cards-holder::-webkit-scrollbar,
+.recipe-content::-webkit-scrollbar {
+  width: 5px;
+}
+.cards-holder .card-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+/* Track */
+.cards-holder::-webkit-scrollbar-track,
+.recipe-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+/* Handle */
+.cards-holder::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+.cards-holder::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+.search-result .recipe-btn {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+}
+.search-result .recipe-btn:hover,
+.search-result .recipe-btn:focus {
+  background-color: #d63384e6;
+  border-color: #d63384e6;
+}
+
+/* End Search Result Section */
